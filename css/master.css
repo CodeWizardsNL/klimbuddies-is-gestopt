@@ -12,18 +12,21 @@ html, body {
     position: relative;
     font-family: 'Roboto';
 }
-
 main {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    padding: 24px 16px;
+    box-sizing: border-box;
 }
-
 img {
     width: 200px;
+    max-width: 100%;
+    height: auto;
     margin: 0 0 25px 0;
 }
 h1 {
@@ -38,17 +41,17 @@ h2 {
     text-align: center;
     font-weight: normal;
 }
-
 #projects {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     margin: 50px auto 0 auto;
+    box-sizing: border-box;
 }
 #projects h3 {
     font-size: 1em;
     margin: 0 0 15px 0;
     text-transform: uppercase;
 }
-
 #klimbuddies {
     display: flex;
     padding: 20px;
@@ -84,7 +87,6 @@ h2 {
     display: block;
     line-height: 1.25em;
 }
-
 #contact {
     text-align: center;
     margin: 25px auto 0 auto;
@@ -92,19 +94,21 @@ h2 {
 #contact a {
     color: #000;
     text-decoration: none;
+    overflow-wrap: break-word;
 }
 #contact a:hover {
     text-decoration: underline;
 }
-
 #message {
     border-radius: 5px;
     padding: 25px;
     color: #000;
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     margin-top: 20px;
+    box-sizing: border-box;
 }
 #message h3 {
     margin: 0 0 15px 0;
@@ -116,8 +120,36 @@ h2 {
 #message p:last-child {
     margin: 0;
 }
-
 #klimbuddies-logo {
     width: 50px;
     margin: 0 auto 15px auto;
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 150px;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.25em;
+    }
+    #message {
+        padding: 20px;
+    }
+    #message p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    #klimbuddies {
+        flex-direction: column;
+        text-align: center;
+    }
+    #klimbuddies__thumbnail {
+        margin: 0 0 15px 0;
+    }
+    #projects {
+        margin-top: 30px;
+    }
 }
